@@ -1,11 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# #### Student Name: Mai Ngo
-# #### Course Name and Number: CSC 555 Big Data Mining
-# #### Assignment 4 - Part 1
-# #### Date: 11/10/2023
-
 # ### Part 1
 
 # select d_dayofweek, d_month, lo_revenue, lo_extendedprice \
