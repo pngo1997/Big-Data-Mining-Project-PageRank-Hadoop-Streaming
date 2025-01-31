@@ -7,22 +7,42 @@ This project explores **Big Data Processing using Hadoop & MapReduce**, with a f
 - **PageRank Calculation for Directed Graphs**  
 - **Handling Dead-End Nodes in PageRank**  
 
-📌 **Course**: CSC 555 - Big Data Mining  
-📌 **Date**: November 10, 2023  
-📌 **Student**: Mai Ngo  
-
----
-
 ## 🚀 Part 1: Hadoop Streaming  
-
 💡 **Task**: Run a Hadoop Streaming job to process data from multiple tables.  
 
-### **Hadoop Command Execution**  
-```bash
-time hadoop jar hadoop-streaming-2.6.4.jar \
-  -input /data/lineorder.tbl,/data/dwdate.tbl \
-  -output /data/output1 \
-  -mapper HW4_mapper.py \
-  -reducer HW4_reducer.py \
-  -file HW4_mapper.py \
-  -file HW4_reducer.py
+## 🔍 Part 2: Bloom Filter Implementation
+💡 **Task**: Bloom Filter Setup
+- SHA-256 Hashing used for element insertion.
+- Two hash functions applied to insert values.
+- Tested false positives with non-inserted values.
+
+## 📈 Part 3: PageRank Computation
+💡 **Task**: Network Graph Analysis
+- Initial PageRank assigned as 1/N (N = total nodes).
+- Matrix-based iteration until convergence.
+- Compared manual vs. Python NetworkX library output.
+- 📌 Convergence Achieved in 6 Iterations
+
+## ❗ Part 4: Handling Dead-End Nodes in PageRank
+💡 **Task**: Approach 1 - Random Teleporting (Random Walk)
+- Dead-end nodes get equal probability distribution (1/N).
+- Ensures stochastic matrix property (column sums to 1).
+- Python implementation matches manual calculations.
+💡 **Task**: Approach 2 - Removing Dead Ends Iteratively
+- Recursively remove dead-end nodes and compute PageRank for the remaining graph.
+- Final PageRanks reassigned based on original network structure.
+
+## 📘 Part 5: Recursive Dead-End Handling in a Chain Graph
+💡 **Scenario**: Dead-end nodes in a sequential chain.
+
+📌 **Observation**:
+- Origin node with self-loop retains PageRank = 1.
+- Dead-end nodes inherit PageRank from previous nodes.
+- PageRank follows an exponential decay pattern.
+
+## 🔢 Part 6: PageRank on Large Graphs (Stanford Web Dataset)
+
+## 🚀 Technologies Used
+🛠 **Big Data Frameworks**:
+- Hadoop (MapReduce, HDFS)
+- Python (NetworkX, NumPy, Pandas)
